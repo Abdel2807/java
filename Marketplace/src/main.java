@@ -5,15 +5,26 @@ import java.nio.file.StandardOpenOption;
 
 import produit.produit;
 import individu.client;
+import individu.vendeur;
 
 public class main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		produit p1 = new produit ("ALB-28","CF006","20","30");
 		produit p2 = new produit ("des","CF006","20","30");
 		client c = new client (2,"testnom","testprenom","22","0606060606","testemail","testmdp");
 		selectionnerProduit(p1);
 		selectionnerProduit(p2);
 		modifierAdresse(c,"14 rue de la reussite");
+		produit p = new produit("pate", "0225", "50", "225");
+    	vendeur.ajouteritems(p); 
+    	vendeur.supprimeritems(p);
+    	System.out.println("Incroyable !");
+    	if (p1.estvendu(p1) == 1) {
+			System.out.println("Le produit n'est plus disponnible");
+		}
+		else {
+			System.out.println("Le produit est disponnible");
+		}
 		}
 	
 public static void supprimernvadd(client c) throws IOException {
